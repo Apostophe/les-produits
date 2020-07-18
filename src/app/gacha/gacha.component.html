@@ -1,0 +1,35 @@
+<div>
+    <h3>Drop Possibles</h3>
+    <div class="mb-1 ml-1" *ngFor="let card of gachaList">
+        <img src="assets/{{card.image}}" width="50" height="50" style="border: 1px solid black;">
+        <span>Drop rate : {{card.dropRate}}%</span>
+    </div>
+    
+</div>
+<div class="mb-3">
+    <button (click)="single()" class="ml-1 btn btn-primary" >Single !!</button>
+
+    <span>Nombre de singles : {{singleDone}}</span>
+    <div class="d-inline-block">
+        <div class="d-inline ml-1" *ngFor="let card of tirageSingle">
+            <img src="assets/{{card.image}}" width="50" height="50" style="border: 1px solid black;">
+        </div>
+    </div>
+</div>
+<div>
+    <button (click)="multi()" class="ml-1 btn btn-primary" >Multi !!</button>
+    <span>Nombre de multis : {{multiDone}}</span>
+    <div class="d-inline-block">
+        <div class="d-inline ml-1" *ngFor="let card of tirageMulti">
+            <img src="assets/{{card.image}}" width="50" height="50" style="border: 1px solid black;">
+        </div>
+    </div>
+</div>
+
+<div>
+    <h3>Drops</h3>
+    <div class="d-inline ml-1 mr-3" *ngFor="let card of gachaList">
+        <img src="assets/{{card.image}}" width="50" height="50" class="mr-1" style="border: 1px solid black;">
+        <span>{{card.drops}}</span>
+    </div>
+</div>
