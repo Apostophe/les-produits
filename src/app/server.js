@@ -34,8 +34,9 @@ const server = http.createServer(app);
 server.listen(port, () => console.log(`API running on localhost:${port}`));
 
 app.get('/gacha',function(req,res){
-        fs.readdir('D:/Docs/les-produits/src/assets',(err,files)=>{
-        res.send(files)
+        fs.readdir(__dirname+"/../assets/cards",(err,files)=>{
+            console.log(files);
+            res.send(files)
         });
     }
 )

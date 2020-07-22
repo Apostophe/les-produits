@@ -42,12 +42,19 @@ export class GachaComponent implements OnInit {
     let rng = Math.random()*100;
     this.gachaList.forEach(element=>{
       if(down<rng && rng<(element.dropRate+down)){
+        if(card.dropRate==4){
+          this.playGif();
+        }
         card=element;
         element.dropped();
       }
       down+=element.dropRate;
     });
     return card;
+  }
+
+  playGif(){
+    
   }
 
   single(){
