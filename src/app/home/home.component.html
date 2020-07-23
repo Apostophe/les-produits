@@ -1,4 +1,25 @@
-<p>
-    Bienvenue dans le gacha-gang {{getLogin()}} !
-  </p>
-  <a class="btn btn-danger"(click)="logout()">Se déconnecter</a>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12"><p class="title text-center mt-5">LES PRODUITS<br><span>The official gacha-game !</span></p></div>
+    <div class="col-md-10 col-11 card mt-3">
+      <p class="text-center subtitle mt-3">Bienvenue {{getLogin()}} !</p>
+      <div class="row justify-content-center">
+        <a href="/gacha" class="col-6 mt-3 mb-3">
+          <div class="btn-custom home-button">
+            <p class="text-center">GACHA</p>
+          </div>
+        </a>
+        <a (click)="logout()" class="col-6 mt-3 mb-3">
+          <div class="btn-custom home-button">
+            <p class="text-center">DÉCONNEXION</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="footer col-12">
+  <p class="text-center">Réalisé par <a href="https://fr.linkedin.com/in/christophe-dos-santos-neto-72a444154" target="_blank">Christophe DOS SANTOS NETO</a> et
+    <a href="https://fr.linkedin.com/public-profile/in/sebastien-kerroue" target="_blank">Sébastien KERROUÉ</a></p>
+</div>

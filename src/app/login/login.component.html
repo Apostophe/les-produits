@@ -1,18 +1,26 @@
-<div class="col-md-6 col-md-offset-3">
-    <div class="login-wrapper">
-      <h2>Page de connexion</h2>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12"><p class="title text-center mt-5">LES PRODUITS<br><span>The official gacha-game !</span></p></div>
+    <div class="col-md-6 col-11 card mt-3">
+      <p class="text-center subtitle mt-3">Connexion</p>
       <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-          <label for="username">Identifiant</label>
+        <div class="form-group mt-4" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label for="username" class="subtitle"><span>Identifiant</span></label>
           <input type="text" class="form-control" name="username" id="username" [(ngModel)]="model.username" #username="ngModel" placeholder='Saisissez votre identifiant' required />
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-          <label for="password">Mot de passe</label>
+        <div class="form-group mt-4" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+          <label for="password" class="subtitle"><span>Mot de passe</span></label>
           <input type="password" class="form-control" name="password" id="password" [(ngModel)]="model.password" #password="ngModel" placeholder='Saisissez votre mot de passe' required />
         </div>
-        <div class="form-group">
-          <button class="btn btn-primary pull-right" [disabled]="!f.form.valid">Connexion</button>
+        <div class="form-group mt-5">
+          <button class="btn btn-custom col-12" [disabled]="!f.form.valid">Connexion</button>
         </div>
       </form>
     </div>
   </div>
+
+</div>
+<div class="footer col-12">
+  <p class="text-center">Réalisé par <a href="https://fr.linkedin.com/in/christophe-dos-santos-neto-72a444154" target="_blank">Christophe DOS SANTOS NETO</a> et
+    <a href="https://fr.linkedin.com/public-profile/in/sebastien-kerroue" target="_blank">Sébastien KERROUÉ</a></p>
+</div>
