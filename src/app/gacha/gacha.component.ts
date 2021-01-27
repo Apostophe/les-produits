@@ -15,14 +15,19 @@ export class GachaComponent implements OnInit {
   public tirageMulti = new Array<Card>();
   public gachaList = new Array<Card>();
   public multiDone:number = 0;
+  public rarityList = new Array<Number>();
 
   constructor(private gachaService:GachaService, private elRef: ElementRef) { }
 
   ngOnInit(): void {
+    this.rarityList.push(0);
+    this.rarityList.push(1);
+    this.rarityList.push(2);
+    this.rarityList.push(3);
     let drop = 4;
     this.gachaService.getAllImages().subscribe(result=>{
       result.forEach(element => {
-        this.gachaList.push(new Card(element,drop));
+        this.gachaList.push(new Card(element,drop,Math.floor(Math.random() * Math.floor(4))));
         drop +=2.5;
       });
       console.log(this.gachaList);
