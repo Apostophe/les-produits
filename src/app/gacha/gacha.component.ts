@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { Card } from '../models/Card';
 import { GachaService } from '../services/gacha.service';
 import { element } from 'protractor';
@@ -16,7 +16,7 @@ export class GachaComponent implements OnInit {
   public gachaList = new Array<Card>();
   public multiDone:number = 0;
 
-  constructor(private gachaService:GachaService) { }
+  constructor(private gachaService:GachaService, private elRef: ElementRef) { }
 
   ngOnInit(): void {
     let drop = 4;
@@ -61,6 +61,21 @@ export class GachaComponent implements OnInit {
     this.singleDone++;
     this.tirageSingle = [];
     this.tirageSingle.push(this.dropCard());
+  }
+
+  openLootbox(){
+    this.multi();
+    console.log(this.tirageMulti);
+    this.addActiveClass(["side", "box-wrapper", "box", "engram-wrapper", "face", "h1"]);
+  }
+
+  private addActiveClass(search){
+    search.forEach(s => {
+      let elements = this.elRef.nativeElement.querySelectorAll("." + s);
+      elements.forEach(element => {
+        element.className += ' active';
+      });
+    });
   }
 }
 

@@ -1,4 +1,4 @@
-<div>
+<!--<div>
     <h3>Drop Possibles</h3>
     <div class="mb-1 ml-1" *ngFor="let card of gachaList">
         <img src="assets/cards/{{card.image}}" width="50" height="50" style="border: 1px solid black;">
@@ -30,5 +30,36 @@
     <div class="d-inline ml-1 mr-3" *ngFor="let card of gachaList">
         <img src="assets/cards/{{card.image}}" width="50" height="50" class="mr-1" style="border: 1px solid black;">
         <span>{{card.drops}}</span>
+    </div>
+</div>-->
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-11 text-center">
+            <h1 class="h1">click to open box</h1>
+            <div class="box-wrapper">
+                <div class="box" (click)="openLootbox()"> 
+                    <div class="side front"></div>
+                    <div class="side top"></div>
+                    <div class="side left"></div>
+                    <div class="side right"></div>
+                    <div class="side open bottom1"></div>
+                    <div class="side open bottom2"></div>
+                    <div class="side open bottom3"></div>
+                    <div class="side open bottom4"></div>
+                    <div class="side back"></div>
+                    <div class="engram-wrapper">
+                    <div class="engram">
+                        <div class="face front2"></div>
+                        <div class="face top2"></div>
+                        <div class="face left2"></div>
+                        <div class="face right2"></div>
+                        <div class="face bottom22"></div>
+                        <div class="face back2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
